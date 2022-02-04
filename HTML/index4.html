@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos CSS::Desafio Latam</title>
+    <style>
+        /*3 formas de dar estilo*/
+        /*1. por elemento o etiqueta, todos se ven afectados */
+        /*FF 00 00 --> 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F (#ff0000)*/
+        /*RGB--> 0 A 255 para cada color (rgb(255,255,0))*/
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        p {
+            color: rgb(255, 255, 0);
+            /*asignar color a letra*/
+            background-color: aqua;
+            /*asignar color al fondo*/
+            font-size: 12px;
+        }
+        /*2. por clase se cambia a uno o varios elementos*/
+        
+        .pcolores {
+            color: blue;
+            font-size: 16px;
+        }
+        /*3. por ID */
+        
+        #parrafo3 {
+            color: #FF0000;
+            font-size: 20px;
+        }
+        
+        #divisor {
+            background-color: lightblue;
+        }
+        
+        #divisor1 {
+            width: 600px;
+            height: 200px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divisor">
+        <p>Parrafo 1</p>
+        <p class="pcolores">Parrafo 2</p>
+        <p class="pcolores" id="parrafo3">Parrafo 3</p>
+        <p class="pcolores">Parrafo 4</p>
+    </div>
+    <div id="divisor1">
+
+    </div>
+</body>
+
+</html>
