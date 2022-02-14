@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+    <script>
+        const num1 = 4;
+        var num2 = parseInt(prompt("Ingrese segundo numero"));
+        var num3 = parseInt(prompt("Ingrese tercer numero"));
+
+        function sumaTres(num2, num3) {
+            console.log(`la suma de los tres numeros es ${num1+num2+num3}`);
+        }
+        sumaTres(num2 + num3);
+
+        const suma3 = function(num2, num3) {
+
+            return num1 + num2 + num3;
+        }
+
+        console.log("El resultado de la suma de tres numeros es: " + suma3(num2, num3))
+
+        /*var n1 = parseInt(prompt("Ingrese un numero"));
+        var n2 = parseInt(prompt("Ingrese segundo numero"));
+        var n3 = parseInt(prompt("Ingrese tercer numero"));
+
+        restaTres(n1, n2, n3);
+
+        function restaTres(n1, n2, n3) {
+            console.log(`la resta de los tres numeros es ${n1-n2-n3}`);
+        }*/
+
+        /*var altura = parseInt(prompt("Ingrese altura"));
+        var radio = parseInt(prompt("Ingrese radio"));
+
+        function volumenCilindro(altura, radio) {
+            alert("El volumen del cilindro es: " + Math.PI * Math.pow(radio, 2) * altura);
+        }
+
+        volumenCilindro(altura, radio);*/
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
