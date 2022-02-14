@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Calcular la suma de todos los términos almacenados en
+                                                                                                                                                                                                                                                una variable con los datos del tipo arreglo del 1 al 9. */
+
+        /* const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+         //ciclo for
+         function sumaArreglo() {
+             var suma = 0;
+             for (var i = 0; i < numeros.length; i++) {
+                 suma = suma + numeros[i];
+             }
+             console.log(suma)
+         }
+         sumaArreglo();
+
+         //recursividad--> la funcion se llama a si misma 
+         function sumaRecursiva() {
+             //validar el tamaño
+             if (numeros.length > 0) {
+                 //resolver, acceder al primer elemento con shift()
+                 //shift() toma el primer elemento y luego lo eliminamos
+                 var valor = numeros.shift();
+                 return valor + sumaRecursiva();
+             } else {
+                 return 0;
+             }
+         }
+         var resultado = sumaRecursiva();
+         console.log(resultado)*/
+
+        //factorial de n:  X! = X * (X-1)! 
+        function factorial_de_n(numero) {
+            if (numero > 1) {
+                return numero * factorial_de_n(numero - 1);
+            } else {
+                return 1;
+            }
+        }
+        console.log(factorial_de_n(4));
+
+        //ejercicio propuesto
+        //Realizar un programa con JavaScript que calcule la resta
+        //de todos los términos disponibles en una variable del tipo
+        //arreglo con los siguientes datos numéricos: nums = [1, 2,
+        //3, 5, 8, 13, 21].
+
+
+        //el numero siguiente es la suma de los dos numeros anteriores 
+
+        const num = [1, 2, 3, 5, 8, 13, 21]
+
+        function resta_num() {
+            if (num.length > 0) {
+                var valor = num.shift();
+                return valor - resta_num();
+            } else {
+                return 0;
+            }
+        }
+
+        var resultado = resta_num();
+        console.log(resultado)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
