@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funciones</title>
     <script>
-        const num1 = 4;
-        var num2 = parseInt(prompt("Ingrese segundo numero"));
-        var num3 = parseInt(prompt("Ingrese tercer numero"));
+        /*const num1 = 4;
+                                                        var num2 = parseInt(prompt("Ingrese segundo numero"));
+                                                        var num3 = parseInt(prompt("Ingrese tercer numero"));
 
-        function sumaTres(num2, num3) {
-            console.log(`la suma de los tres numeros es ${num1+num2+num3}`);
-        }
-        sumaTres(num2 + num3);
+                                                        function sumaTres(num2, num3) {
+                                                            console.log(`la suma de los tres numeros es ${num1+num2+num3}`);
+                                                        }
+                                                        sumaTres(num2 + num3);
 
-        const suma3 = function(num2, num3) {
+                                                        const suma3 = function(num2, num3) {
 
-            return num1 + num2 + num3;
-        }
+                                                            return num1 + num2 + num3;
+                                                        }
 
-        console.log("El resultado de la suma de tres numeros es: " + suma3(num2, num3))
+                                                        console.log("El resultado de la suma de tres numeros es: " + suma3(num2, num3))*/
 
         /*var n1 = parseInt(prompt("Ingrese un numero"));
         var n2 = parseInt(prompt("Ingrese segundo numero"));
@@ -41,6 +41,34 @@
         }
 
         volumenCilindro(altura, radio);*/
+
+        var lenguaje = "Javascript";
+
+        function miFuncion2() {
+            console.log(lenguaje);
+            var lenguaje2 = "NodeJS";
+            console.log(lenguaje2);
+        }
+
+        miFuncion2();
+        console.log(lenguaje);
+
+
+        function miFuncion() {
+            //const, var(se ocupan en todo el codigo), let-->es una variable interna de una funcion
+            let miVariable = 4;
+
+            function potencia() {
+                return miVariable * miVariable;
+            }
+            return potencia(); //16
+        }
+        let resultado = miFuncion(); //16
+        console.log(resultado);
+        //la funcion potencia no es visible
+        //porque esta definida dentro de miFuncion()
+        resultado = potencia();
+        console.log(miVariable);
     </script>
 </head>
 
