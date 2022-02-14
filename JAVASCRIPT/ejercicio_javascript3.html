@@ -8,7 +8,7 @@
     <title>Document</title>
     <script>
         /*Calcular la suma de todos los términos almacenados en
-                                                                                                                                                                                                                                                una variable con los datos del tipo arreglo del 1 al 9. */
+                                                                                                                                                                                                                                                                                                                                                                                                una variable con los datos del tipo arreglo del 1 al 9. */
 
         /* const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -54,7 +54,7 @@
         //3, 5, 8, 13, 21].
 
 
-        //el numero siguiente es la suma de los dos numeros anteriores 
+        /*//el numero siguiente es la suma de los dos numeros anteriores 
 
         const num = [1, 2, 3, 5, 8, 13, 21]
 
@@ -68,7 +68,79 @@
         }
 
         var resultado = resta_num();
-        console.log(resultado)
+        console.log(resultado)*/
+
+        /* let i = 0;
+         while (i < 10) {
+             i++;
+         }
+         console.log(i)
+
+         function recorrer() {
+             let i = 0;
+             while (i < 10) {
+                 i++;
+             }
+         }
+         recorrer();
+         console.log(i)*/
+
+        var num = prompt("Ingrese un numero entero");
+        var resultado = 0;
+
+        function verificar(numero) {
+            if (numero > 0) {
+                resultado = "positivo";
+            } else if (numero < 0) {
+                resultado = "negativo";
+            } else if (numero === 0) {
+                resultado = "nulo";
+            } else {
+                resultado = "no es un número";
+            }
+            return resultado
+        }
+        //alert(`El numero ingresado es: ${verificar(parseInt(num))}`);
+
+        let verificar2 = (numero) => {
+            if (numero > 0) {
+                resultado = "positivo";
+            } else if (numero < 0) {
+                resultado = "negativo";
+            } else if (numero === 0) {
+                resultado = "nulo";
+            } else {
+                resultado = "no es un número";
+            }
+            return resultado
+        }
+        console.log(`El numero ingresado es: ${verificar2(parseInt(num))}`)
+
+        var nombre = prompt("Ingrese su nombre");
+        var edad = prompt("Ingrese su edad");
+
+        let saludo = (nombre, edad) => {
+            //mensaje es una variable acumuladora de tipo string 
+            //ES5
+            /* var mensaje = nombre;
+             if (edad >= 18) {
+                 mensaje = mensaje + " eres mayor de edad";
+             } else {
+                 mensaje = mensaje + " eres menor de edad";
+             }
+             return mensaje*/
+
+            //ES6
+            let mensaje = "";
+            if (edad >= 18) {
+                mensaje = "eres mayor de edad";
+            } else {
+                mensaje = "eres menor de edad";
+            }
+            return `Hola ${nombre} ${mensaje}`
+        }
+
+        console.log("Hola, ", saludo(nombre, parseInt(edad)))
     </script>
 </head>
 
