@@ -11,7 +11,8 @@
     <script>
         function validarFormulario() {
             //alert("Funciona el llamado de html");
-            var nombre = document.getElementById("nombre").value //para capturar el valor de ese elemento
+            //var nombre = document.getElementById("nombre").value //para capturar el valor de ese elemento
+            var nombre = document.getElementsByName("nombre").value
                 //alert(`su nombre es ${nombre}`)
             var apellido = document.getElementById("apellido").value
             var email = document.getElementById("email").value
