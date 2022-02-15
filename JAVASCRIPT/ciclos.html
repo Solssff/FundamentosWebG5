@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos</title>
+    <script>
+        /* Mostrar los números pares y contar los números impares
+                                                                                                                                                                                                                                                                                                                mediante un ciclo for para los números comprendidos
+                                                                                                                                                                                                                                                                                                                entre el 0 y el 20 (incluidos ambos), pero cuando se llegue
+                                                                                                                                                                                                                                                                                                                al número 10, el programa debe continuar y no mostrar el
+                                                                                                                                                                                                                                                                                                                número en cuestión, igualmente, cuando se llegue al
+                                                                                                                                                                                                                                                                                                                número 19 el ciclo debe ser interrumpido y terminar su
+                                                                                                                                                                                                                                                                                                                ejecución.*/
+
+
+
+        //for
+
+        var numerosImpares = 0; //variable contadora
+        for (let i = 0; i <= 20; i++) {
+            if (i == 10) {
+                continue;
+            }
+            if (i == 19) {
+                break;
+            }
+            if (i % 2 == 0) { //obtener pares
+                console.log('numero par', i); //mostrar numeros pares i
+            } else {
+                numerosImpares++;
+            }
+        }
+        console.log(`Cantidad numeros impares es ${numerosImpares}`);
+
+
+        //while
+        var numerosImpares = 0;
+        var i = 0;
+        while (i <= 20) {
+            if (i == 10) {
+                i++;
+                continue;
+            }
+            if (i == 19) {
+                break;
+            }
+            if (i % 2 == 0) { //obtener pares
+                console.log('numero par', i); //mostrar numeros pares i
+            } else {
+                numerosImpares++;
+            }
+            i++;
+        }
+        console.log(`Cantidad numeros impares es ${numerosImpares}`);
+
+
+
+        //do-while
+
+        /*Se solicita mostrar los números múltiplos de cuatro y
+contar los números que no sean múltiplo de cuatro
+mediante un ciclo do-while para los números
+comprendidos entre el 1 y el 50 (incluidos ambos), pero
+cuando se llegue al número 16, el programa debe
+continuar y no mostrar el número en cuestión.
+Igualmente, cuando se llegue al número 45 el ciclo debe
+ser interrumpido y terminar su ejecución.*/
+
+        var j = 1;
+        var noMultiplosCuatro = 0;
+        do {
+            if (j == 16) {
+                j++;
+                continue;
+            }
+            if (j == 45) {
+                break;
+            }
+            if (j % 4 == 0) {
+                console.log(`numeros multiplo de 4`, j);
+            } else {
+                noMultiplosCuatro++;
+            }
+            j++;
+
+        } while (j >= 1 && j <= 50);
+
+        document.write("numero no multiplo de 4 entre 1 y 45");
+        document.write(' cantidad es ', noMultiplosCuatro);
+
+        /*Realizar un programa con JavaScript mediante el ciclo
+while que muestre los números múltiplos de cinco y
+cuente los números que no sean múltiplo de cinco, para
+los números comprendidos entre el 0 y el 35 (incluidos
+ambos). Cuando se llegue al número 10, el programa
+debe continuar y no mostrar el número en cuestión,
+igualmente, cuando se llegue al número 30 el ciclo debe
+ser interrumpido y terminar su ejecución.*/
+
+        var noMultiplosCinco = 0;
+        var k = 0;
+        while (k >= 0 && k <= 35) {
+            if (k == 10) {
+                k++;
+                continue;
+            }
+            if (k == 30) {
+                break;
+            }
+            if (k % 5 == 0) {
+                console.log(`numeros multiplos de 5`, k);
+            } else {
+                noMultiplosCinco++;
+            }
+            k++;
+        }
+        console.log(` cantidad de numeros no multiplos de 5 es `, noMultiplosCinco)
+
+        //ciclos anidados
+
+        //Desarrollar un programa utilizando JavaScript que
+        //permita encontrar el factorial del 1 al 10 implementando
+        //anidación de ciclos repetitivos.
+
+        var resultado = 1;
+        for (let i = 1; i <= 10; i++) { // i = 3
+
+            for (let j = 1; j <= i; j++) { //j = 1
+                resultado = resultado * j; //rs:
+            }
+            console.log(`el factorial de ${i} es ${resultado}`); //1,2
+            resultado = 1;
+        }
+
+        /*Desarrollar un programa utilizando JavaScript que
+permita encontrar los elementos comunes entre dos
+listados de números realizados con ciclos repetitivos
+anidados, uno va del 1 al 5 y el segundo del 1 al 10.*/
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= 10; j++) {
+                if (i == j) {
+                    console.log(`${i} encontrado en j`);
+                    break;
+                }
+            }
+        }
+
+
+        /* Desarrollar un programa utilizando JavaScript partiendo
+del nombre específico de un estudiante, Juan.
+Se solicita verificar mediante un arreglo si este estudiante
+se encuentra en el curso de Diseño donde existe una lista
+de 5 estudiantes: Pedro, María, Diego, Juan y Paola.*/
+
+        let estudiante = "Juan";
+        let estudiantes = ["Pedro", "Maria", "Diego", "Juan", "Paola"];
+
+        for (let i = 0; i < estudiantes.length; i++) {
+            if (estudiantes[i] = estudiante) {
+                console.log('Estudiante encontrado');
+                break;
+            }
+        }
+        console.log('Fuera del for');
+
+        /*Desarrollar un programa utilizando JavaScript que
+utilizando ciclos anidados calcule todas las tablas de
+multiplicar hasta 10.*/
+
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= 10; j++) {
+                let resultado = i * j;
+                console.log(`${i}*${j}= ${resultado}`)
+            }
+            console.log("");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
