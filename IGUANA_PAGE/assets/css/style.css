@@ -36,15 +36,23 @@ h1 {
 .p {
     font-size: 25px;
     margin-left: 150px;
-    padding-right: 1080px;
     text-align: left;
     font-weight: 300;
+    padding-bottom: 50px;
 }
 
 .img2 {
-    padding-left: 1050px;
-    width: 650px;
+    padding-left: 200px;
+    padding-top: 50px;
+    width: 600px;
     height: auto;
+    display: inline-block;
+}
+
+#section3 {
+    /*padding-right: 1080px;*/
+    width: 900px;
+    display: inline-block;
 }
 
 #section2 {
@@ -53,15 +61,42 @@ h1 {
     height: 450px;
 }
 
-.bloque {
+#section {
+    padding-left: 375px;
+    text-align: left;
     display: inline-block;
+    width: 200px;
+}
+
+.p2 {
+    font-size: 25px;
+    text-align: left;
+    font-weight: 300;
+    display: inline-block;
+    width: 500px;
+}
+
+.fa-eye:before {
+    content: "\f06e";
+    font-size: 90px;
+}
+
+.fa-hand-peace:before {
+    content: "\f25b";
+    font-size: 100px;
+}
+
+.fa-paint-brush:before {
+    content: "\f1fc";
+    font-size: 90px;
 }
 
 h2 {
-    padding-top: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     left: 464px;
     text-align: center;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 500;
 }
 
