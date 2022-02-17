@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglos</title>
+    <script>
+        //creacion de arreglos 
+        var arregloPeliculas0 = new Array("It 2", "Rambo 3", "Halloween", "Shaft");
+        var arregloPeliculas1 = ["It 2", "Rambo 3", "Halloween", "Shaft"];
+        let arregloPeliculas2 = ["It 2", "Rambo 3", "Halloween", "Shaft"];
+
+        //arreglo vacio--> la cantidad de elementos(arreglo.lenght) es cero
+        var arregloVacio = [];
+        console.log(arregloVacio.length);
+
+        //arreglo con distintos datos
+        var arregloVariosDatos = ["abcde", 1234, true, {
+            curso: "Desafio"
+        }];
+        console.log(arregloVariosDatos);
+
+        //ejercicio porpuesto
+        var arregloEjercicio = ["Perro", "Gato", {
+                ave: "guacamaya"
+            }, 2020,
+            "erizo", {
+                lugar: "Chile"
+            }, {
+                ciudad: "Santiago de Chile"
+            }
+        ];
+        console.log(arregloEjercicio);
+
+        //acceder a un elemento del arreglo
+        console.log("elemento posicion 5: ",
+            arregloEjercicio[5]);
+
+        var programa_web = [
+            "JavaScript",
+            "React JS",
+            "Vue JS", //posicion 2
+            "Angular JS", { //posicion 3
+                BackEnd: "Node JS" //posicion 4
+            }
+        ];
+        console.log(programa_web[2], programa_web[4]);
+
+        //matrices
+        var matriz = [
+            [1, 3, 5, 7, 9], //posicion 0
+            [2, 4, 6, 8, 0] //posicion 1
+        ];
+        console.log("matriz", matriz);
+
+        //accediendo a los elementos internos
+
+        matriz[1][3];
+        console.log(matriz[1][3]);
+
+        //matriz 3x3
+        var matriz3 = [
+            [1, 2, 3], //posicion 0
+            [4, 5, 6], //posicion 1
+            [7, 8, 9], //posicion 2
+
+        ];
+
+        //[0,0],[0,1],[0,2]
+        //[1,0],[1,1],[1,2]
+        //[2,0],[2,1],[2,2]
+
+        console.log("numero 5", matriz3[1][1]);
+
+        //lenght
+        var instrumentos = ["Guitarra Eléctrica", "Piano de Cola", "Violín",
+            "Trompeta"
+        ];
+        console.clear();
+        console.log(instrumentos);
+        console.log("cantidad de instrumentos", instrumentos.length);
+        instrumentos.length = 2; //reducir a 2 espacios si el numero es menor al tamaño del arreglo original pero si el numero es mayor agrega espacios  
+        console.log(instrumentos);
+        //agregamos nuevos espacios
+        instrumentos[6] = "Guitarra Clasica";
+        instrumentos[7] = "Chelo";
+        console.log(instrumentos);
+        //si existe ya un elemento en la posicion este sera reemplazado
+        //sino existe un elemento en la posicion, lo agrega
+        //pueden ser agregados en cualquier posicion, no necesariamente tiene que ser correlativo
+        //asignar un valor al lenght, aumenta o reduce su tamaño
+        //si aumenta agrega espacios vacios 
+        //si reduce elimina elementos del arreglo original
+
+
+        //Ejercio propuesto largo de array
+        let datosWeb = ["JavaScript", "VueJS", "AngularJS", "ReactJS", "NodeJS"];
+        console.log(datosWeb);
+        console.log(datosWeb.length);
+        datosWeb.length = 4;
+        console.log(datosWeb);
+        datosWeb[7] = "Express";
+        console.log(datosWeb);
+
+
+        //recorrer un arreglo (iterancdo)
+        console.clear();
+        var usuarios = [
+            'Manuel', {
+                nombre: 'Juan',
+                edad: 34
+            },
+            30, {
+                nombre: 'Rodrigo',
+                edad: 55
+            },
+            true, {
+                nombre: 'Paola',
+                edad: 34
+            },
+            'Pedro', ['Maria', 'Eliana']
+        ];
+
+        for (let i = 0; i < usuarios.length; i++) {
+            console.log(`posicion ${i}`, usuarios[i]);
+        }
+
+        //ejercicio
+        console.clear();
+        var mascotas = ['Perros', {
+            nombre: 'Firulais',
+            edad: 5
+        }, 'Gatos', {
+            nombre: 'Michi',
+            edad: 2
+        }, 'Aves', {
+            nombre: 'Pepito',
+            edad: 1
+        }, ];
+
+        mascotas[10] = "Elefante";
+        for (let i = 0; i < mascotas.length; i++) {
+            console.log(`posicion ${i}`, mascotas[i]);
+        }
+        console.log("");
+        for (let posicion in mascotas) { //mascotas es el objeto
+            //console.log('posicion', posicion);
+            console.log(`mascota ${posicion}`, mascotas[posicion]);
+        }
+        for (let elemento of mascotas) { //no se puede iterar una lista solo arreglos
+            console.log(elemento)
+        }
+
+        /*for (const key in object) {
+            if (Object.hasOwnProperty.call(object, key)) {
+                const element = object[key];
+
+            }
+        }*/
+
+        //ejercicio for-in
+        console.clear();
+        let persona = { //no es un arreglo es una lista o diccionario 
+            nombre: 'Marcelo Salas',
+            edad: 11,
+            saludar: () => {
+                return "Buena matador!";
+            }
+        };
+
+        for (let llave in persona) {
+            console.log(llave);
+            console.log(persona[llave]);
+        }
+
+        //alert(mascotas[1]["nombre"]); //muestra Firulais, aca se mezcla posiciones y clave
+
+        //ejercicio for-of
+        console.clear();
+        let edades = [49, 51, 21, 18, 15];
+        for (let posicion in edades) { //for-in muestra posiciones
+            console.log(posicion);
+        }
+        console.log("");
+        for (let posicion of edades) { //for- of muestra el elemento 
+            console.log(posicion);
+        }
+        console.log("");
+        /*for (let elemento of persona) { //no se puede iterar una lista solo arreglos por eso el for-of no sirve con persona
+            console.log(elemento)
+        }*/
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
