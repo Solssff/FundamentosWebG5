@@ -18,6 +18,7 @@ h1 {
     font-size: 50px;
     margin-top: 7px;
     text-align: center;
+    color: #ffffff;
 }
 
 .img1 {
@@ -33,12 +34,22 @@ h1 {
     }
 }
 
-.p {
+p {
+    color: #ffffff;
     font-size: 25px;
+    font-weight: 300;
+}
+
+.p {
     margin-left: 150px;
     text-align: left;
-    font-weight: 300;
     padding-bottom: 50px;
+}
+
+.p2 {
+    text-align: left;
+    display: inline-block;
+    width: 500px;
 }
 
 .img2 {
@@ -50,15 +61,14 @@ h1 {
 }
 
 #section3 {
-    /*padding-right: 1080px;*/
     width: 900px;
     display: inline-block;
 }
 
-#section2 {
-    background-color: #1E1A13;
+#icons-Section {
     opacity: 0.98;
     height: 450px;
+    background-color: #1E1A13;
 }
 
 #section {
@@ -66,14 +76,6 @@ h1 {
     text-align: left;
     display: inline-block;
     width: 200px;
-}
-
-.p2 {
-    font-size: 25px;
-    text-align: left;
-    font-weight: 300;
-    display: inline-block;
-    width: 500px;
 }
 
 .fa-eye:before {
@@ -98,6 +100,7 @@ h2 {
     text-align: center;
     font-size: 45px;
     font-weight: 500;
+    color: #ffffff;
 }
 
 .img3 {
@@ -112,8 +115,7 @@ h2 {
 footer {
     background-color: #1E1A13;
     text-align: center;
-    font-size: 25px;
-    font-weight: 300;
     padding-top: 15px;
     padding-bottom: 15px;
+    color: #ffffff;
 }
