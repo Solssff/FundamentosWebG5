@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos Array</title>
+    <script>
+        var arreglo = [];
+        console.log(arreglo, arreglo.length);
+
+        //push, agrega al final
+        arreglo.push("a");
+        console.log(arreglo, arreglo.length);
+        arreglo.push("e", "i", "o", "e");
+        console.log(arreglo, arreglo.length);
+        //var set = new Set(arreglo);
+        //console.log(set);
+        arreglo.push({
+            nombre: 'Sole',
+            apellido: 'Silva'
+        });
+        console.log(arreglo, arreglo.length);
+
+        arreglo.push([2, 4, 6, 8, 0]);
+        console.log(arreglo, arreglo.length);
+
+        //Ejercicio propuesto
+        let perros = [{
+            raza: "Yorkshire Terrier",
+            color: "marrón, negro y gris"
+        }, {
+            raza: "Shar Pei ",
+            color: " marrón "
+        }, {
+            raza: "Schnauzer gigante",
+            color: "negro"
+        }];
+
+        console.log(perros, perros.length);
+
+        perros.push({
+            raza: "Pastor Aleman",
+            color: "marron y negro"
+        }, {
+            raza: "Beagle",
+            color: "blanco,marrón y negro"
+        }, {
+            raza: "Afgano",
+            color: "negro"
+        });
+
+        console.dir(perros); //lenght:6
+        perros.pop(); //eliminar el ultimo elemento
+        console.dir(perros); //el lenght cambio de 6 a 5
+        var eliminado = perros.shift(); //eliminar el primer elemento
+        console.log(eliminado);
+        console.dir(perros);
+
+        //split--> subdivide por caracter repetitivo (delimitador)
+
+        var cliente = "juan,rodrigo;campos;37;a@a.cl;12341234";
+        var arrCliente = cliente.split(";");
+        console.log(arrCliente)
+
+        var oCliente = {
+            nombre: arrCliente[0],
+            apellido: arrCliente[1],
+            edad: arrCliente[2],
+            email: arrCliente[3],
+            rut: arrCliente[4],
+        }
+        console.clear();
+        console.log("objeto cliente", oCliente)
+
+
+        var fecha = "18/02/2022";
+        var arregloFecha = fecha.split("/");
+        console.log(fecha, arregloFecha);
+        var fecha2 = arregloFecha.join("-");
+        console.log(fecha2);
+
+        var pokemones = ["pikachu", "ditto", "bulbasaur"];
+        console.log(pokemones.join('-'));
+
+        //map--> nos devuelve un array procesado
+        var nueva_fecha = arregloFecha.map(function(f) {
+            console.log(f);
+            //evaluar y procesar
+            return f
+        });
+
+        console.log(nueva_fecha);
+
+        //Ejercicio map 
+        var clientes = [{
+            nombre: 'Juan',
+            edad: 28
+        }, {
+            nombre: 'Carlos',
+            edad: 17
+        }, {
+            nombre: 'Karla',
+            edad: 27
+        }, ];
+
+        var nuevo_cliente = clientes.map(function(c) {
+            console.dir(c);
+            if (c.edad >= 18) {
+                c.informacion = 'mayor de edad';
+            } else {
+                c.informacion = 'menor de edad';
+            }
+            return c;
+        });
+
+        console.log(nuevo_cliente);
+
+        var numeros = [10, 15, 20, 25, 30];
+        var nuevos_numeros = numeros.map(function(numero) {
+            console.log(numero);
+            return numero * 2;
+        });
+        console.log(nuevos_numeros);
+
+        var powNumeros = numeros.map(function(n) {
+            return Math.pow(n, 2);
+        });
+        console.log(powNumeros);
+
+        //reduce
+        //arreglo.reduce(callback(acumulador,valorActual[, índice[, array]])[,valorInicial])
+        console.clear();
+        console.log(numeros);
+        var reduce = numeros.reduce(function(ac, va) {
+            console.log(ac, va);
+            return ac + va;
+        });
+        console.log(reduce);
+
+        //ejercicio propuesto reduce
+        var nombres = clientes.reduce(function(ac, va) {
+            console.log(ac, va);
+            return ac + ";" + va.nombre;
+        }, "");
+        //1° vuelta ""+'juan' 2° vuelta 'juan'+'carlos'='juancarlos' 3°vuelta 'juancarlos'+'karla'='juancarloskarla'
+        console.log(nombres);
+
+
+        //filter
+        //var nuevoArreglo =arreglo.filter(callback(currentValue[,index[, array]])[, thisArg])arreglo.filter(callback(currentValue[,index[, array]])[, thisArg])
+        var nuevoArreglo = clientes.filter(function(cliente) {
+            return cliente.edad >= 18;
+        });
+        console.log(nuevoArreglo);
+
+        var experiencias = [{
+            titulo: "Practica",
+            anos: 1,
+        }, {
+            titulo: "Programador Junior",
+            anos: 2,
+        }, {
+            titulo: "Programador Senior",
+            anos: 4,
+        }, {
+            titulo: "Jefe de proyecto",
+            anos: 5,
+        }];
+        var masDeDos = experiencias.filter(function(exp) {
+            return exp.anos > 2;
+        });
+        console.log(masDeDos);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
