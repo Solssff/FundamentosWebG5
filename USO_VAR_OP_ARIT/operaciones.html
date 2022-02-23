@@ -66,31 +66,18 @@
 
         //se crea variable diasTotales para capturar numero de dias ingresados por el usuario
         var diasTotales = parseInt(prompt('Ingrese numero de días'));
-        //luego se crea variable diasRestantes para capturar el resultado de los diasTotales ingresados por el usuario menos 
-        //365 que corresponde a los dias que equivale un año 
-        var diasRestantes = diasTotales - 365;
-        //se utiliza la estructura if-else, si los diasRestantes son mayores o iguales a cero significa que diasTotales hace 
-        //referencia a mas de un año, en cambio si es menor a cero estamos en un rango menor a un año y por ello se ejecutan 
-        //distintos calculos para determinar la equivalencia. 
-        if (diasRestantes >= 0) {
-            //se crea la var años que guarda el resultado de la division entre diasTotales y 365, que es el total de dias que 
-            //tiene un año. Se utiliza Math.floor para que redondee hacia abajo el valor de años al entero mas proximo
-            var años = Math.floor(diasTotales / 365);
-            //se crea la variable semanas que guarda el resultado de la  division entre diasRestantes y 7 y asi obtener el 
-            //numero de semanas que "sobran" del año. Acá también se utiliza Math.floor
-            var semanas = Math.floor(diasRestantes / 7);
-            //se crea la variable dias que guarda el resultado del modulo entre diasRestantes y 7, para los dias que quedaron 
-            //fuera de la ultima semana considerada en la variable semanas
-            var dias = diasRestantes % 7;
-        } else {
-            //en caso de que diasRestantes fuera menor a cero, estamos en el caso de que si o si la var años tomaria valor igual a 
-            //cero y solo quedaria trabajar con var semanas y var dias, para ello ocupamos los diasTotales ingresados directamente
-            //por el usuario, la var semanas y var dias guardan el valor de la division y el modulo entre diasTotales y 7,
-            //respectivamente
-            var años = 0;
-            var semanas = Math.floor(diasTotales / 7);
-            var dias = diasTotales % 7;
-        }
+        //luego se crea variable diasRestantes, esta variable representa el resto de dias que no son considerados en el 
+        //año de 365 dias
+        var diasRestantes = diasTotales % 365;
+        //se crea la var años que guarda el resultado de la division entre diasTotales y 365, que es el total de dias que 
+        //tiene un año. Se utiliza Math.floor para que redondee hacia abajo el valor de años al entero mas proximo
+        var años = Math.floor(diasTotales / 365);
+        //se crea la variable semanas que guarda el resultado de la  division entre diasRestantes y 7 y asi obtener el 
+        //numero de semanas que "sobran". Acá también se utiliza Math.floor
+        var semanas = Math.floor(diasRestantes / 7);
+        //se crea la variable dias que guarda el resultado del modulo entre diasRestantes y 7 para los dias que quedaron 
+        //fuera de la ultima semana considerada en la variable semanas
+        var dias = (diasRestantes % 7);
         //se imprime en la consola toda la información de la equivalencia de los dias ingresados a años/semanas/dias
         console.log(`El quivalente al numero ${diasTotales} de dias ingresados es ${años} años, ${semanas} semanas y ${dias} dias`)
 
