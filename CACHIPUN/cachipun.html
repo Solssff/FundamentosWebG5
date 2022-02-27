@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cachipun</title>
+    <script>
+        var numeroJuegos = parseInt(prompt("Ingrese numero de veces que desea jugar"));
+        console.log(numeroJuegos);
+
+        for (i = 0; i < numeroJuegos; i++) {
+
+            var cachipunMaquina = Math.floor(Math.random() * 3);
+            if (cachipunMaquina == 0) {
+                console.log("piedra");
+            } else if (cachipunMaquina == 1) {
+                console.log("papel");
+            } else {
+                console.log("tijera");
+            }
+
+            var cachipunUsuario = parseInt(prompt("Ingrese su jugada 0: piedra, 1: papel o 2: tijera"));
+            console.log(cachipunUsuario);
+
+            switch (cachipunUsuario) {
+                case 0:
+                    if (cachipunUsuario === cachipunMaquina) {
+                        alert("Empatados");
+                        console.log("Empatados con la máquina");
+                    } else if (cachipunMaquina === 1) {
+                        alert("Lo sentimos, perdiste contra la máquina:(");
+                        console.log("Lo sentimos, perdiste contra la máquina :(");
+                    } else {
+                        alert("Felicidades, has ganado a la máquina :D");
+                        console.log("Felicidades, has ganado a la máquina :D");
+                    }
+                    break;
+                case 1:
+                    if (cachipunUsuario === cachipunMaquina) {
+                        alert("Empatados");
+                        console.log("Empatados con la máquina");
+                    } else if (cachipunMaquina === 2) {
+                        alert("Lo sentimos, perdiste contra la máquina:(");
+                        console.log("Lo sentimos, perdiste contra la máquina :(");
+                    } else {
+                        alert("Felicidades, has ganado a la máquina :D");
+                        console.log("Felicidades, has ganado a la máquina :D");
+                    }
+                    break;
+                case 2:
+                    if (cachipunUsuario === cachipunMaquina) {
+                        alert("Empatados con la máquina");
+                        console.log("Empatados");
+                    } else if (cachipunMaquina === 0) {
+                        alert("Lo sentimos, perdiste contra la máquina:(");
+                        console.log("Lo sentimos, perdiste contra la máquina :(");
+                    } else {
+                        alert("Felicidades, has ganado a la máquina :D");
+                        console.log("Felicidades, has ganado a la máquina :D");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
