@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Multiplicacion</title>
+    <script>
+        let numero = parseInt(prompt("Ingrese numero entre 1 y 20 para obtener tabla de multiplicar y factorial"));
+        let resultado = 0;
+
+        let verificarRango = (numero) => {
+            if (numero >= 1 && numero <= 20) {
+                resultado = "dentro del rango"
+            } else {
+                resultado = "fuera de rango";
+            }
+            return resultado;
+        }
+
+        if (numero >= 1 && numero <= 20) {
+            for (let i = 1; i <= numero; i++) {
+                let resultadoMultiplicacion = i * numero;
+                console.log(`${i}*${numero}= ${resultadoMultiplicacion}`)
+            }
+            console.log("");
+
+            let resultadoFactorial = 1;
+            for (let i = 1; i <= numero; i++) {
+                for (let j = 1; j <= i; j++) {
+                    resultadoFactorial = resultadoFactorial * j;
+                }
+                console.log(`el factorial de ${i} es ${resultadoFactorial}`);
+                resultadoFactorial = 1;
+            }
+        } else {
+            alert(`El numero ingresado esta: ${verificarRango(parseInt(numero))}`);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
