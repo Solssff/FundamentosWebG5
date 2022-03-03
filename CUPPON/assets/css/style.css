@@ -1,0 +1,41 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.v-center {
+    display: flex;
+    align-items: center;
+}
+
+.h4 {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 500;
+}
+
+.p1 {
+    color: #28A745;
+    display: inline-block;
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+.p2 {
+    display: inline-block;
+    font-size: 16pt;
+    font-weight: 300;
+}
+
+.p3 {
+    font-size: 13pt;
+}
+
+h5 {
+    font-size: 20pt;
+    font-weight: 300;
+}
+
+p {
+    font-weight: 300;
+    font-size: 16pt
+}
