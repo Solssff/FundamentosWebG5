@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Médico Ñuñoa</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script>
+        document.write('<p>Estadisticas centro medico ñuñoa</p>');
+
+        var especialidades = {
+            'dental': [{
+                Hora: '8:30',
+                Especialista: 'ANDREA ZUÑIGA',
+                Paciente: 'MARCELA RETAMAL',
+                Rut: '11123425-6',
+                Previsión: 'ISAPRE'
+            }, {
+                Hora: '11:00',
+                Especialista: 'MARIA PIA ZAÑARTU',
+                Paciente: 'ANGEL MUÑOZ	',
+                Rut: '9878789-2',
+                Previsión: 'ISAPRE'
+            }, {
+                Hora: '11:30',
+                Especialista: 'SCARLETT WITTING',
+                Paciente: 'MARIO KAST',
+                Rut: '7998789-5',
+                Previsión: 'FONASA'
+            }, {
+                Hora: '13:00',
+                Especialista: 'FRANCISCO VON TEUBER',
+                Paciente: 'KARIN FERNANDEZ',
+                Rut: '18887662-K',
+                Previsión: 'FONASA'
+            }, {
+                Hora: '13:30',
+                Especialista: 'EDUARDO VIÑUELA',
+                Paciente: 'HUGO SANCHEZ',
+                Rut: '17665461-4',
+                Previsión: 'FONASA'
+            }, {
+                Hora: '14:00',
+                Especialista: 'RAQUEL VILLASECA',
+                Paciente: 'ANA SEPULVEDA',
+                Rut: '14441281-0',
+                Previsión: 'ISAPRE'
+            }],
+
+            'radiologia': [{
+                Hora: '11:00',
+                Especialista: 'IGNACIO SCHULZ',
+                Paciente: 'FRANCISCA ROJAS',
+                Rut: '9878782-1',
+                Previsión: 'FONASA'
+            }, {
+                Hora: '11:30',
+                Especialista: 'FEDERICO SUBERCASEAUX',
+                Paciente: 'PAMELA ESTRADA',
+                Rut: '	15345241-3',
+                Previsión: 'ISAPRE'
+            }, {
+                Hora: '15:00',
+                Especialista: 'FERNANDO WURTHZ',
+                Paciente: 'ARMANDO LUNA',
+                Rut: '16445345-9',
+                Previsión: 'ISAPRE'
+            }, {
+                Hora: '15:30',
+                Especialista: 'ANA MARIA GODOY',
+                Paciente: 'MANUEL GODOY',
+                Rut: '17666419-0',
+                Previsión: 'FONASA'
+            }, {
+                Hora: '16:00',
+                Especialista: 'PATRICIA SUAZO',
+                Paciente: 'RAMON ULLOA',
+                Rut: '14989389-K',
+                Previsión: 'FONASA'
+            }],
+
+            'traumatologia': [{
+                Hora: '8:00',
+                Especialista: 'MARIA PAZ ALTUZARRA',
+                Paciente: 'PAULA SANCHEZ',
+                Rut: '15554774-5',
+                Previsión: 'FONASA'
+            }, {
+                Hora: '10:00',
+                Especialista: 'RAUL ARAYA',
+                Paciente: 'ANGÉLICA NAVAS',
+                Rut: '15444147-9',
+                Previsión: 'ISAPRE'
+            }, {
+                Hora: '10:30',
+                Especialista: 'MARIA ARRIAGADA',
+                Paciente: 'ANA KLAPP',
+                Rut: '17879423-9',
+                Previsión: 'ISAPRE'
+            }, {
+                Hora: '11:00',
+                Especialista: 'ALEJANDRO BADILLA',
+                Paciente: 'FELIPE MARDONES',
+                Rut: '1547423-6',
+                Previsión: 'ISAPRE'
+            }, {
+                Hora: '11:30',
+                Especialista: 'CECILIA BUDNIK',
+                Paciente: 'DIEGO MARRE',
+                Rut: '16554741-K',
+                Previsión: 'FONASA'
+            }, {
+                Hora: '12:00',
+                Especialista: 'ARTURO CAVAGNARO',
+                Paciente: 'CECILIA MENDEZ',
+                Rut: '9747535-8',
+                Previsión: 'ISAPRE'
+            }, {
+                Hora: '12:30',
+                Especialista: 'ANDRES KANACRI',
+                Paciente: 'MARCIAL SUAZO',
+                Rut: '11254785-5',
+                Previsión: 'ISAPRE'
+            }],
+        }
+
+        //console.log(especialidades);
+
+        for (let clave in especialidades) {
+            console.log("");
+            console.log(clave, especialidades[clave]);
+            for (let posicion in especialidades[clave]) {
+                console.log(posicion, especialidades[clave][posicion]);
+            }
+        }
+
+        for (let clave in especialidades) {
+            console.log('Primeras atenciones y ultimas atenciones');
+            for (let posicion in especialidades[clave]) {
+                if (especialidades[clave][posicion].Hora === "8:30" && 'dental' == clave) {
+                    console.log(posicion, especialidades[clave][posicion].Paciente)
+                    console.log(posicion, especialidades[clave][posicion].Previsión)
+                    document.write(`Primera atención Dental ${posicion,especialidades[clave][posicion].Paciente} - ${posicion,especialidades[clave][posicion].Previsión} | `)
+                }
+                if (especialidades[clave][posicion].Hora === "14:00" && 'dental' == clave) {
+                    console.log(posicion, especialidades[clave][posicion].Paciente)
+                    console.log(posicion, especialidades[clave][posicion].Previsión)
+                    document.write(`Ultima atención Dental ${posicion,especialidades[clave][posicion].Paciente} - ${posicion,especialidades[clave][posicion].Previsión} <br>`)
+                }
+                if (especialidades[clave][posicion].Hora === "11:00" && 'radiologia' == clave) {
+                    console.log(posicion, especialidades[clave][posicion].Paciente)
+                    console.log(posicion, especialidades[clave][posicion].Previsión)
+                    document.write(`Primera atención Radiología ${posicion, especialidades[clave][posicion].Paciente} - ${posicion, especialidades[clave][posicion].Previsión} | `)
+                }
+                if (especialidades[clave][posicion].Hora === "16:00" && 'radiologia' == clave) {
+                    console.log(posicion, especialidades[clave][posicion].Paciente)
+                    console.log(posicion, especialidades[clave][posicion].Previsión)
+                    document.write(`Ultima atención Radiología ${posicion, especialidades[clave][posicion].Paciente} - ${posicion, especialidades[clave][posicion].Previsión}<br>`)
+                }
+                if (especialidades[clave][posicion].Hora === "8:00" && 'traumatologia' == clave) {
+                    console.log(posicion, especialidades[clave][posicion].Paciente)
+                    console.log(posicion, especialidades[clave][posicion].Previsión)
+                    document.write(`Primera atención Traumatología ${posicion, especialidades[clave][posicion].Paciente} - ${posicion, especialidades[clave][posicion].Previsión} | `)
+                }
+                if (especialidades[clave][posicion].Hora === "12:30" && 'traumatologia' == clave) {
+                    console.log(posicion, especialidades[clave][posicion].Paciente)
+                    console.log(posicion, especialidades[clave][posicion].Previsión)
+                    document.write(`Ultima atención Traumatología ${posicion, especialidades[clave][posicion].Paciente} - ${posicion, especialidades[clave][posicion].Previsión}<br>`)
+                }
+            }
+        }
+
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                let dent = [{
+                    Hora: '8:30',
+                    Especialista: 'ANDREA ZUÑIGA',
+                    Paciente: 'MARCELA RETAMAL',
+                    Rut: '11123425-6',
+                    Previsión: 'ISAPRE'
+                }, {
+                    Hora: '11:00',
+                    Especialista: 'MARIA PIA ZAÑARTU',
+                    Paciente: 'ANGEL MUÑOZ	',
+                    Rut: '9878789-2',
+                    Previsión: 'ISAPRE'
+                }, {
+                    Hora: '11:30',
+                    Especialista: 'SCARLETT WITTING',
+                    Paciente: 'MARIO KAST',
+                    Rut: '7998789-5',
+                    Previsión: 'FONASA'
+                }, {
+                    Hora: '13:00',
+                    Especialista: 'FRANCISCO VON TEUBER',
+                    Paciente: 'KARIN FERNANDEZ',
+                    Rut: '18887662-K',
+                    Previsión: 'FONASA'
+                }, {
+                    Hora: '13:30',
+                    Especialista: 'EDUARDO VIÑUELA',
+                    Paciente: 'HUGO SANCHEZ',
+                    Rut: '17665461-4',
+                    Previsión: 'FONASA'
+                }, {
+                    Hora: '14:00',
+                    Especialista: 'RAQUEL VILLASECA',
+                    Paciente: 'ANA SEPULVEDA',
+                    Rut: '14441281-0',
+                    Previsión: 'ISAPRE'
+                }];
+
+
+                $('#mostrar1').html('')
+                $('#mostrar1').append(` <table class="table">
+                    <thead><tr id='atributo1'></tr></thead>
+                    <tbody id='tablaBody1'></tbody>
+                    </table>`)
+
+                var valores = Object.entries(dent[0]);
+                //console.log("valores", valores);
+
+                var titulosTabla = "";
+                for (let atributos in dent[0]) {
+                    console.log(atributos);
+                    titulosTabla = titulosTabla + "<th>" + atributos + "</th>";
+                }
+
+                //console.log(titulosTabla)
+                $('#atributo1').append(titulosTabla)
+
+                var filas = "";
+                for (let i = 0; i <= dent.length; i++) {
+                    let valores = "";
+                    for (let atributo in dent[i]) {
+                        valores = valores + "<td>" + dent[i][atributo] + "</td>";
+                    }
+                    filas = filas + "<tr>" + valores + "</tr>";
+                }
+                $('#tablaBody1').append(filas)
+
+            });
+
+        });
+
+
+        $(document).ready(function() {
+            $("#btn2").click(function() {
+                let radio = [{
+                    Hora: '11:00',
+                    Especialista: 'IGNACIO SCHULZ',
+                    Paciente: 'FRANCISCA ROJAS',
+                    Rut: '9878782-1',
+                    Previsión: 'FONASA'
+                }, {
+                    Hora: '11:30',
+                    Especialista: 'FEDERICO SUBERCASEAUX',
+                    Paciente: 'PAMELA ESTRADA',
+                    Rut: '	15345241-3',
+                    Previsión: 'ISAPRE'
+                }, {
+                    Hora: '15:00',
+                    Especialista: 'FERNANDO WURTHZ',
+                    Paciente: 'ARMANDO LUNA',
+                    Rut: '16445345-9',
+                    Previsión: 'ISAPRE'
+                }, {
+                    Hora: '15:30',
+                    Especialista: 'ANA MARIA GODOY',
+                    Paciente: 'MANUEL GODOY',
+                    Rut: '17666419-0',
+                    Previsión: 'FONASA'
+                }, {
+                    Hora: '16:00',
+                    Especialista: 'PATRICIA SUAZO',
+                    Paciente: 'RAMON ULLOA',
+                    Rut: '14989389-K',
+                    Previsión: 'FONASA'
+                }]
+
+                $('#mostrar2').html('')
+                $('#mostrar2').append(` <table class="table">
+                    <thead><tr id='atributo2'></tr></thead>
+                    <tbody id='tablaBody2'></tbody>
+                    </table>`)
+
+                var valores = Object.entries(radio[0]);
+                //console.log("valores", valores);
+
+                var titulosTabla = "";
+                for (let atributos in radio[0]) {
+                    console.log(atributos);
+                    titulosTabla = titulosTabla + "<th>" + atributos + "</th>";
+                }
+
+                //console.log(titulosTabla)
+                $('#atributo2').append(titulosTabla)
+
+                var filas = "";
+                for (let i = 0; i <= radio.length; i++) {
+                    let valores = "";
+                    for (let atributo in radio[i]) {
+                        valores = valores + "<td>" + radio[i][atributo] + "</td>";
+                    }
+                    filas = filas + "<tr>" + valores + "</tr>";
+                }
+                $('#tablaBody2').append(filas)
+
+            });
+        });
+
+        $(document).ready(function() {
+            $("#btn3").click(function() {
+                let trauma = [{
+                    Hora: '8:00',
+                    Especialista: 'MARIA PAZ ALTUZARRA',
+                    Paciente: 'PAULA SANCHEZ',
+                    Rut: '15554774-5',
+                    Previsión: 'FONASA'
+                }, {
+                    Hora: '10:00',
+                    Especialista: 'RAUL ARAYA',
+                    Paciente: 'ANGÉLICA NAVAS',
+                    Rut: '15444147-9',
+                    Previsión: 'ISAPRE'
+                }, {
+                    Hora: '10:30',
+                    Especialista: 'MARIA ARRIAGADA',
+                    Paciente: 'ANA KLAPP',
+                    Rut: '17879423-9',
+                    Previsión: 'ISAPRE'
+                }, {
+                    Hora: '11:00',
+                    Especialista: 'ALEJANDRO BADILLA',
+                    Paciente: 'FELIPE MARDONES',
+                    Rut: '1547423-6',
+                    Previsión: 'ISAPRE'
+                }, {
+                    Hora: '11:30',
+                    Especialista: 'CECILIA BUDNIK',
+                    Paciente: 'DIEGO MARRE',
+                    Rut: '16554741-K',
+                    Previsión: 'FONASA'
+                }, {
+                    Hora: '12:00',
+                    Especialista: 'ARTURO CAVAGNARO',
+                    Paciente: 'CECILIA MENDEZ',
+                    Rut: '9747535-8',
+                    Previsión: 'ISAPRE'
+                }, {
+                    Hora: '12:30',
+                    Especialista: 'ANDRES KANACRI',
+                    Paciente: 'MARCIAL SUAZO',
+                    Rut: '11254785-5',
+                    Previsión: 'ISAPRE'
+                }];
+
+                $('#mostrar3').html('')
+                $('#mostrar3').append(` <table class="table">
+                    <thead><tr id='atributo3'></tr></thead>
+                    <tbody id='tablaBody3'></tbody>
+                    </table>`)
+
+                var valores = Object.entries(trauma[0]);
+                //console.log("valores", valores);
+
+                var titulosTabla = "";
+                for (let atributos in trauma[0]) {
+                    console.log(atributos);
+                    titulosTabla = titulosTabla + "<th>" + atributos + "</th>";
+                }
+
+                //console.log(titulosTabla)
+                $('#atributo3').append(titulosTabla)
+
+                var filas = "";
+                for (let i = 0; i <= trauma.length; i++) {
+                    let valores = "";
+                    for (let atributo in trauma[i]) {
+                        valores = valores + "<td>" + trauma[i][atributo] + "</td>";
+                    }
+                    filas = filas + "<tr>" + valores + "</tr>";
+                }
+                $('#tablaBody3').append(filas)
+
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <hr>
+    <button type="button" id="btn1" class="btn btn-primary center">Atenciones Dentales</button>
+    <br>
+    <hr>
+    <div id="mostrar1"></div>
+    <button type="button" id="btn2" class="btn btn-success center">Atenciones Radiológicas</button>
+    <br>
+    <hr>
+    <div id="mostrar2"></div>
+    <button type="button " id="btn3" class="btn btn-secondary center">Atenciones Traumatológicas</button>
+    <br>
+    <hr>
+    <div id="mostrar3"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+</body>
+
+</html>
