@@ -50,31 +50,37 @@
         </div>
     </div>
     <script>
-        var enviar = document.getElementById("botton");
-        var nombre = document.getElementById("nombre");
-        var asunto = document.getElementById("asunto");
-        var mensaje = document.getElementById("mensaje");
-        var parrafo = document.getElementsByTagName("p");
-        var resultado = document.getElementsByClassName("resultado");
+        var formulario = document.getElementById("formulario")
+            //var btn = document.getElementById("botton");
 
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-        enviar.addEventListener('click', function() {
-            function validacion() {
+            var input1 = document.getElementById("nombre").value;
+            var input2 = document.getElementById("asunto").value;
+            var input3 = document.getElementById("mensaje").value;
+            var parrafo1 = document.querySelector(".errorNombre");
+            var parrafo2 = document.querySelector(".errorAsunto");
+            var parrafo3 = document.querySelector(".errorMensaje");
+            var result = document.querySelector(".resultado");
+            var validacion = /[a-zA-Z]/gim;
 
-                if (nombre.match(/[a-z][A-Z]/i) && asunto.match(/[a-z][A-Z]/i) && mensaje.match(/[a-z][A-Z]/i)) {
-                    resultado.innerHTML = 'Mensaje enviado con exito';
-                } else {
-                    if (nombre === "") {
-                        parrafo[0].innerHTML = 'El nombre es requerido';
-                    }
-                    if (asunto === "") {
-                        parrafo[1].innerHTML = 'El asunto es requerido';
-                    }
-                    if (mensaje === "") {
-                        parrafo[2].innerHTML = 'El mensaje es requerido';
-                    }
-                }
+            if (input1 === "" || input2 === "" || input3 === "") {
+                parrafo1.innerHTML = "El nombre es requerido";
+                console.log(parrafo1.innerHTML);
+                parrafo2.innerHTML = "El asunto es requerido";
+                console.log(parrafo2.innerHTML);
+                parrafo3.innerHTML = "El mensaje es requerido";
+                console.log(parrafo3.innerHTML);
+            } else if (validacion.test(input1) && validacion.test(input2) && validacion.test(input3)) {
+                result.innerHTML = "Mensaje enviado con exito";
+                console.log(result.innerHTML);
+            } else {
+                result.innerHTML = "Ingrese caracteres validos de la a-z o A-Z";
+                result.style.color = "red";
+                console.log(result.innerHTML);
             }
+
         });
     </script>
 </body>
