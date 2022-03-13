@@ -65,13 +65,13 @@
         console.log(arrCliente)
 
         var oCliente = {
-            nombre: arrCliente[0],
-            apellido: arrCliente[1],
-            edad: arrCliente[2],
-            email: arrCliente[3],
-            rut: arrCliente[4],
-        }
-        console.clear();
+                nombre: arrCliente[0],
+                apellido: arrCliente[1],
+                edad: arrCliente[2],
+                email: arrCliente[3],
+                rut: arrCliente[4],
+            }
+            //console.clear();
         console.log("objeto cliente", oCliente)
 
 
@@ -83,6 +83,7 @@
 
         var pokemones = ["pikachu", "ditto", "bulbasaur"];
         console.log(pokemones.join('-'));
+        console.clear();
 
         //map--> nos devuelve un array procesado
         var nueva_fecha = arregloFecha.map(function(f) {
@@ -116,7 +117,7 @@
         });
 
         console.log(nuevo_cliente);
-
+        //console.log("");
         var numeros = [10, 15, 20, 25, 30];
         var nuevos_numeros = numeros.map(function(numero) {
             console.log(numero);
@@ -131,7 +132,8 @@
 
         //reduce
         //arreglo.reduce(callback(acumulador,valorActual[, índice[, array]])[,valorInicial])
-        console.clear();
+        //console.clear();
+        console.log("");
         console.log(numeros);
         var reduce = numeros.reduce(function(ac, va) {
             console.log(ac, va);
@@ -150,6 +152,7 @@
 
         //filter
         //var nuevoArreglo =arreglo.filter(callback(currentValue[,index[, array]])[, thisArg])arreglo.filter(callback(currentValue[,index[, array]])[, thisArg])
+        console.log("");
         var nuevoArreglo = clientes.filter(function(cliente) {
             return cliente.edad >= 18;
         });

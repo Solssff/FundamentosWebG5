@@ -78,7 +78,7 @@
         var instrumentos = ["Guitarra Eléctrica", "Piano de Cola", "Violín",
             "Trompeta"
         ];
-        console.clear();
+        //console.clear();
         console.log(instrumentos);
         console.log("cantidad de instrumentos", instrumentos.length);
         instrumentos.length = 2; //reducir a 2 espacios si el numero es menor al tamaño del arreglo original pero si el numero es mayor agrega espacios  
@@ -106,7 +106,7 @@
 
 
         //recorrer un arreglo (iterancdo)
-        console.clear();
+        // console.clear();
         var usuarios = [
             'Manuel', {
                 nombre: 'Juan',
@@ -128,7 +128,7 @@
         }
 
         //ejercicio
-        console.clear();
+        //console.clear();
         var mascotas = ['Perros', {
             nombre: 'Firulais',
             edad: 5
@@ -149,10 +149,11 @@
             //console.log('posicion', posicion);
             console.log(`mascota ${posicion}`, mascotas[posicion]);
         }
-        for (let elemento of mascotas) { //no se puede iterar una lista solo arreglos
+        console.log("");
+        for (let elemento of mascotas) { //no se puede iterar una lista, solo arreglos
             console.log(elemento)
         }
-
+        console.log("");
         /*for (const key in object) {
             if (Object.hasOwnProperty.call(object, key)) {
                 const element = object[key];
@@ -161,7 +162,7 @@
         }*/
 
         //ejercicio for-in
-        console.clear();
+        // console.clear();
         let persona = { //no es un arreglo es una lista o diccionario 
             nombre: 'Marcelo Salas',
             edad: 11,
@@ -178,7 +179,7 @@
         //alert(mascotas[1]["nombre"]); //muestra Firulais, aca se mezcla posiciones y clave
 
         //ejercicio for-of
-        console.clear();
+        //console.clear();
         let edades = [49, 51, 21, 18, 15];
         for (let posicion in edades) { //for-in muestra posiciones
             console.log(posicion);
