@@ -1,10 +1,13 @@
-.card {
+.card-body {
     border: none;
     margin-top: 20px;
-    margin-left: 270px;
     ;
 }
 
 #numero {
-    width: 32rem;
+    width: 33rem;
+}
+
+.div1 {
+    text-align: center;
 }
