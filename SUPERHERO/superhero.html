@@ -36,7 +36,7 @@
                         success: function(data) {
                             console.log(data);
 
-                            $('#info').append(`<div class="card d-flex flex-row ms-0">
+                            $('#info').append(`<div class="card d-flex flex-row ms-0 ">
                                                     <div>
                                                         <img width=200rem height=200rem src="${data.image.url}">
                                                     </div>
@@ -57,43 +57,43 @@
                                                 </div>
                                             `);
                         }
-                    });
-                };
+                    })
 
-                window.onload = function() {
-
-                    var propiedades = new CanvasJS.Chart("#chartContainer", {
+                    let propiedades = {
+                        exportEnable: true,
                         animationEnabled: true,
                         title: {
                             text: "Estadisticas de poder del SuperHeroe"
                         },
                         data: [{
                             type: "pie",
+                            showInLegend: true,
                             startAngle: 240,
                             yValueFormatString: "##0.00\"%\"",
                             indexLabel: "{label} {y}",
                             dataPoints: [{
                                 y: data.powerstats.intelligence,
-                                label: "intelligence"
+                                label: "Inteligencia"
                             }, {
                                 y: data.powerstats.strength,
-                                label: "strength"
+                                label: "Fuerza"
                             }, {
                                 y: data.powerstats.speed,
-                                label: "speed"
+                                label: "Velocidad"
                             }, {
                                 y: data.powerstats.durability,
-                                label: "durability"
+                                label: "Durabilidad"
                             }, {
                                 y: data.powerstats.power,
-                                label: "power"
+                                label: "Poder"
                             }, {
                                 y: data.powerstats.combat,
-                                label: "combat"
+                                label: "Combate"
                             }]
                         }]
-                    });
+                    };
                     propiedades.render();
+                    $("#graficoTorta").CanvasJSChart(propiedades);
                 };
 
                 elegirSuperHeroe();
@@ -106,33 +106,33 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#"><img src="assets/img/sh2.jpg" width="40pt" height="40pt"> SuperHero</a>
+                <a class="navbar-brand text-white" href="#"><img src="assets/img/sh2.jpg" width="40pt" height="40pt" class="d-inline-block align-text-top"> SuperHero</a>
             </div>
         </nav>
-        <div class="row mt-3 div1">
-            <div>
-                <div class="card-body">
-                    <img src="assets/img/sh1.jpg" alt="logo superhero">
-                    <h5 class="card-title ">Encuentra tu SuperHero</h5>
-                    <form>
-                        <label class="card-text mb-3">Ingresa el número del SuperHero a buscar</label>
-                        <br>
-                        <input type="search" id="numero" name="numero" placeholder="Busca tu SuperHero">
-                        <br>
-                        <button class="btn btn-primary mt-3" type="submit" id="button">Buscar</button>
-                        <br>
-                    </form>
-                </div>
-                <div class="row card-body">
-                    <div class="col-6" id="info"></div>
-                    <div class="col-6" id="chartContainer"></div>
-                </div>
+
+        <div class="row mt-3">
+            <div class="card-body col-4 div1">
+                <img src="assets/img/sh1.jpg" alt="logo superhero">
+                <h5 class="card-title ">Encuentra tu SuperHero</h5>
+                <form>
+                    <label class="card-text mb-3">Ingresa el número del SuperHero a buscar</label>
+                    <br>
+                    <input type="search" id="numero" name="numero" placeholder="Busca tu SuperHero">
+                    <br>
+                    <button class="btn btn-primary mt-3" type="submit" id="button">Buscar</button>
+                    <br>
+                </form>
+            </div>
+            <div class="row card-body">
+                <div class="col-6 " id="info"></div>
+                <div class="col-6 " id="graficoTorta"></div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
 </body>
 
 </html>

@@ -1,7 +1,6 @@
 .card-body {
-    border: none;
-    margin-top: 20px;
-    ;
+    border: 10px black;
+    /*margin-top:20;*/
 }
 
 #numero {
@@ -10,4 +9,5 @@
 
 .div1 {
     text-align: center;
+    align-items: center;
 }
